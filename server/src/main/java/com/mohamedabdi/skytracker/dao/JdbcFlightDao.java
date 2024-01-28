@@ -4,6 +4,8 @@ import com.mohamedabdi.skytracker.model.Flight;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import com.mohamedabdi.skytracker.model.SearchCriteria;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -61,5 +63,14 @@ public class JdbcFlightDao implements FlightDao {
     public void deleteFlight(int flightId) {
         String sql = "DELETE FROM flights WHERE flight_id = ?";
         jdbcTemplate.update(sql, flightId);
+    }
+    @Override
+    public List<Flight> findFlights(SearchCriteria criteria) {
+        String sql = "SELECT * FROM flights WHERE ";
+        if (criteria.getDepartureCity() != null) {
+            sql += "departure_city = '" + criteria.getDepartureCity() + "' AND ";
+        }
+        sql = sql.substring(0, sql.length() - 5);
+        return jdbcTemplate.query(sql, new FlightRowMapper());
     }
 }

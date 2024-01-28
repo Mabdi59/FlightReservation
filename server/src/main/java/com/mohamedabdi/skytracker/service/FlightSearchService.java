@@ -1,6 +1,8 @@
 package com.mohamedabdi.skytracker.service;
 
+import com.mohamedabdi.skytracker.dao.FlightDao;
 import com.mohamedabdi.skytracker.model.Flight;
+import com.mohamedabdi.skytracker.model.SearchCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -8,16 +10,14 @@ import java.util.List;
 @Service
 public class FlightSearchService {
 
-    private final FlightRepository flightRepository;
+    private final FlightDao flightDao;
 
     @Autowired
-    public FlightSearchService(FlightRepository flightRepository) {
-        this.flightRepository = flightRepository;
+    public FlightSearchService(FlightDao flightDao) {
+        this.flightDao = flightDao;
     }
 
     public List<Flight> searchFlights(SearchCriteria criteria) {
-        // Implement search logic based on criteria
-        // This can involve complex database queries
-        return flightRepository.findFlights(criteria);
+        return flightDao.findFlights(criteria);
     }
 }

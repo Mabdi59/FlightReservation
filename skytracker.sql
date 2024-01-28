@@ -1,3 +1,12 @@
+BEGIN TRANSACTION;
+
+-- Drop the existing tables if they exist
+DROP TABLE IF EXISTS flights CASCADE;
+DROP TABLE IF EXISTS destinations CASCADE;
+DROP TABLE IF EXISTS reservations CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS airports CASCADE;
+
 CREATE TABLE airports (
     airport_code VARCHAR(10) PRIMARY KEY,
     name VARCHAR(255),
@@ -32,3 +41,13 @@ CREATE TABLE reservations (
     reservation_date TIMESTAMP,
     status VARCHAR(50)
 );
+
+CREATE TABLE destinations (
+    city VARCHAR(255) PRIMARY KEY,
+    country VARCHAR(255),
+    description TEXT,
+    image_url VARCHAR(255),
+    virtual_tour_url VARCHAR(255)
+);
+
+COMMIT;
