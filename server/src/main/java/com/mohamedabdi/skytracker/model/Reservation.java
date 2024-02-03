@@ -5,23 +5,26 @@ import java.time.LocalDateTime;
 public class Reservation {
     private int reservationId;
     private int userId;
-    private int flightId;
+    private String flightReference;
+    private String searchParameters;
     private LocalDateTime reservationDate;
     private String status;
 
-    // Constructors
+    // Constructors, Getters, and Setters
     public Reservation() {
     }
 
-    public Reservation(int reservationId, int userId, int flightId, LocalDateTime reservationDate, String status) {
+    public Reservation(int reservationId, int userId, String flightReference, String searchParameters, LocalDateTime reservationDate, String status) {
         this.reservationId = reservationId;
         this.userId = userId;
-        this.flightId = flightId;
+        this.flightReference = flightReference;
+        this.searchParameters = searchParameters;
         this.reservationDate = reservationDate;
         this.status = status;
     }
 
-    // Getters and Setters
+    // Getters and setters
+
     public int getReservationId() {
         return reservationId;
     }
@@ -38,12 +41,20 @@ public class Reservation {
         this.userId = userId;
     }
 
-    public int getFlightId() {
-        return flightId;
+    public String getFlightReference() {
+        return flightReference;
     }
 
-    public void setFlightId(int flightId) {
-        this.flightId = flightId;
+    public void setFlightReference(String flightReference) {
+        this.flightReference = flightReference;
+    }
+
+    public String getSearchParameters() {
+        return searchParameters;
+    }
+
+    public void setSearchParameters(String searchParameters) {
+        this.searchParameters = searchParameters;
     }
 
     public LocalDateTime getReservationDate() {

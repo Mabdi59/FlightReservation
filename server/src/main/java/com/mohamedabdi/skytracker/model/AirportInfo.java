@@ -1,23 +1,22 @@
 package com.mohamedabdi.skytracker.model;
 
-public class Airport {
+public class AirportInfo {
     private String airportCode;
     private String name;
     private String city;
     private String country;
 
-    // Constructor
-    public Airport() {
-    }
+    // Constructors
+    public AirportInfo() {}
 
-    public Airport(String airportCode, String name, String city, String country) {
+    public AirportInfo(String airportCode, String name, String city, String country) {
         this.airportCode = airportCode;
         this.name = name;
         this.city = city;
         this.country = country;
     }
 
-    // Getters and setters
+    // Getters and Setters
     public String getAirportCode() {
         return airportCode;
     }
@@ -48,16 +47,5 @@ public class Airport {
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    // toString method for debugging
-    @Override
-    public String toString() {
-        return "Airport{" +
-                "airportCode='" + airportCode + '\'' +
-                ", name='" + name + '\'' +
-                ", city='" + city + '\'' +
-                ", country='" + country + '\'' +
-                '}';
     }
 }

@@ -1,45 +1,26 @@
 package com.mohamedabdi.skytracker.model;
 
-import java.time.LocalDateTime;
-
-public class Flight {
-    private int flightId;
+public class FlightInfo {
     private String flightNumber;
     private String airline;
     private String departureAirportCode;
     private String arrivalAirportCode;
-    private LocalDateTime scheduledDepartureTime;
-    private LocalDateTime scheduledArrivalTime;
-    private LocalDateTime realTimeDepartureTime;
-    private LocalDateTime realTimeArrivalTime;
+    private String scheduledDepartureTime;
+    private String scheduledArrivalTime;
     private String status;
 
-    // Constructors, getters, setters
-
-    public Flight(int flightId, String flightNumber, String airline, String departureAirportCode, String arrivalAirportCode, LocalDateTime scheduledDepartureTime, LocalDateTime scheduledArrivalTime, LocalDateTime realTimeDepartureTime, LocalDateTime realTimeArrivalTime, String status) {
-        this.flightId = flightId;
+    // Constructors
+    public FlightInfo(String flightNumber, String airline, String departureAirportCode, String arrivalAirportCode, String scheduledDepartureTime, String scheduledArrivalTime, String status) {
         this.flightNumber = flightNumber;
         this.airline = airline;
         this.departureAirportCode = departureAirportCode;
         this.arrivalAirportCode = arrivalAirportCode;
         this.scheduledDepartureTime = scheduledDepartureTime;
         this.scheduledArrivalTime = scheduledArrivalTime;
-        this.realTimeDepartureTime = realTimeDepartureTime;
-        this.realTimeArrivalTime = realTimeArrivalTime;
         this.status = status;
     }
 
-    public Flight() {
-
-    }
-
-    public int getFlightId() {
-        return flightId;
-    }
-
-    public void setFlightId(int flightId) {
-        this.flightId = flightId;
-    }
+    // getters, and setters
 
     public String getFlightNumber() {
         return flightNumber;
@@ -73,36 +54,20 @@ public class Flight {
         this.arrivalAirportCode = arrivalAirportCode;
     }
 
-    public LocalDateTime getScheduledDepartureTime() {
+    public String getScheduledDepartureTime() {
         return scheduledDepartureTime;
     }
 
-    public void setScheduledDepartureTime(LocalDateTime scheduledDepartureTime) {
+    public void setScheduledDepartureTime(String scheduledDepartureTime) {
         this.scheduledDepartureTime = scheduledDepartureTime;
     }
 
-    public LocalDateTime getScheduledArrivalTime() {
+    public String getScheduledArrivalTime() {
         return scheduledArrivalTime;
     }
 
-    public void setScheduledArrivalTime(LocalDateTime scheduledArrivalTime) {
+    public void setScheduledArrivalTime(String scheduledArrivalTime) {
         this.scheduledArrivalTime = scheduledArrivalTime;
-    }
-
-    public LocalDateTime getRealTimeDepartureTime() {
-        return realTimeDepartureTime;
-    }
-
-    public void setRealTimeDepartureTime(LocalDateTime realTimeDepartureTime) {
-        this.realTimeDepartureTime = realTimeDepartureTime;
-    }
-
-    public LocalDateTime getRealTimeArrivalTime() {
-        return realTimeArrivalTime;
-    }
-
-    public void setRealTimeArrivalTime(LocalDateTime realTimeArrivalTime) {
-        this.realTimeArrivalTime = realTimeArrivalTime;
     }
 
     public String getStatus() {
