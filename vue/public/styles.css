@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Mandalore Laser Title';
+    src: url('./fonts/MandaloreLaserTitle.woff2') format('woff2'),
+        url('./fonts/MandaloreLaserTitle.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root{
+    --brand-green-color: #5FA873;
+    --brand-brown-color: #A18F63;
+    --brand-lightred-color: #AC685B;
+    --brand-darkred-color: #BB554A;
+    --brand-white-color: #FFFFFF;
+}
+
+body{
+    margin: 0px;
+}
